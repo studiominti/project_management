@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_022046) do
     t.text "description"
     t.string "start_date"
     t.string "finish_date"
-    t.string "status"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

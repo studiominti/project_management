@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.select :status, options_for_select(['Proposal', 'In Progress', 'Completed']) %>
+    <%= form.select :status, Project.statuses.keys  %>
   </div>
 
   <div class="actions">

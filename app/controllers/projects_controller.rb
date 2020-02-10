@@ -4,11 +4,8 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    #@projects = Project.all
-    @projects_proposal = Project.where(status: 'Proposal')
-    @projects_in_progress = Project.where(status: 'In Progress')
-    @projects_completed = Project.where(status: 'Completed')
-
+    @q = Project.ransack(params[:q])
+    @projects = @q.result(distinct: true)
   end
 
   # GET /projects/1
